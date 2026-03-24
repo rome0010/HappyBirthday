@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Falling petals -->
+<div id="particles"></div>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-logo">Another Year of You</div>
+  <ul class="nav-links">
+    <li><a href="#gallery">Photos</a></li>
+    <li><a href="#message">Message</a></li>
+    <li><a href="#wishes">Wishes</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline id="heroVideo">
+    <source src="happy.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <button class="sound-btn" id="soundBtn" onclick="toggleSound('heroVideo', 'heroSoundIcon', 'heroSoundLabel')">
+    <span id="heroSoundIcon">🔇</span>
+    <span id="heroSoundLabel">Tap for Sound</span>
+  </button>
+  <div class="hero-ornament"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">✦ To My Special Wifey ✦</div>
+    <h1>Happy 23th<br><em>Birthday</em></h1>
+    <p class="hero-sub">You are my everything — today and always</p>
+    <a href="#gallery" class="hero-cta">
+      <span>View Celebration</span>
+      <span>↓</span>
+    </a>
+  </div>
+</section>
+
+<!-- Divider -->
+<div class="divider">
+  <div class="divider-line"></div>
+  <span class="divider-icon">✦</span>
+  <div class="divider-line"></div>
+</div>
+
+<!-- Gallery -->
+<section class="gallery" id="gallery">
+  <div class="section-header reveal">
+    <div class="section-label">Memories</div>
+    <h2 class="section-title">The <em>Celebration</em></h2>
+  </div>
+
+  <!-- Gallery Video -->
+  <div class="gallery-video-wrap reveal">
+    <video class="gallery-video" autoplay muted loop playsinline id="galleryVideo">
+      <source src="baby.mp4" type="video/mp4">
+    </video>
+    <div class="gallery-video-overlay"></div>
+    <button class="sound-btn gallery-sound-btn" onclick="toggleSound('galleryVideo', 'gallerySoundIcon', 'gallerySoundLabel')">
+      <span id="gallerySoundIcon">🔇</span>
+      <span id="gallerySoundLabel">Tap for Sound</span>
+    </button>
+  </div>
+
+ <div class="gallery-grid reveal">
+    <div class="gallery-item">
+      <img src="1.jpg" alt="Birthday celebration">
+      <div class="gallery-overlay"><span>Celebrate</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="2.jpg" alt="Birthday cake">
+      <div class="gallery-overlay"><span>Cake</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="3.jpg" alt="Balloons">
+      <div class="gallery-overlay"><span>Joy</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="4.jpg" alt="Confetti">
+      <div class="gallery-overlay"><span>Confetti</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="5.jpg" alt="Memory">
+      <div class="gallery-overlay"><span>Memory</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="6.jpg" alt="Together">
+      <div class="gallery-overlay"><span>Together</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Divider -->
+<div class="divider">
+  <div class="divider-line"></div>
+  <span class="divider-icon">♡</span>
+  <div class="divider-line"></div>
+</div>
+
+<!-- Message -->
+<section class="message-section" id="message">
+  <div class="message-inner reveal">
+    <span class="message-quote">"</span>
+    <p class="message-text">
+      May this birthday be the beginning of a year filled with
+      laughter, love, and countless reasons to smile. You deserve
+      all the happiness this world has to offer — and so much more.
+    </p>
+    <div class="message-signature">
+      <span class="sig-line"></span>
+      <span class="sig-text">Made with Love</span>
+      <span class="sig-line"></span>
+    </div>
+  </div>
+</section>
+
+<!-- Wishes -->
+<section class="wishes" id="wishes">
+  <div class="section-header reveal">
+    <div class="section-label">With Love</div>
+    <h2 class="section-title">Birthday <em>Wishes</em></h2>
+  </div>
+
+  <div class="wishes-grid reveal">
+    <div class="wish-card">
+      <span class="wish-icon">🌸</span>
+      <div class="wish-title">Joy & Laughter</div>
+      <p class="wish-desc">May every moment of your day be filled with pure happiness and endless smiles.</p>
+    </div>
+    <div class="wish-card">
+      <span class="wish-icon">✨</span>
+      <div class="wish-title">Love & Light</div>
+      <p class="wish-desc">Surrounded by the people who cherish you, may love fill your heart completely.</p>
+    </div>
+    <div class="wish-card">
+      <span class="wish-icon">🎂</span>
+      <div class="wish-title">Sweet Moments</div>
+      <p class="wish-desc">Like the sweetest cake, may your year be layered with beautiful memories.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <span class="footer-logo">Happy Birthday</span>
+  <p class="footer-sub">Made with &nbsp;·&nbsp; Wishing you the very best</p>
+</footer>
+
+<script>
+// All videos with their button info
+const videoControls = {
+  heroVideo:    { iconId: 'heroSoundIcon',    labelId: 'heroSoundLabel'    },
+  galleryVideo: { iconId: 'gallerySoundIcon', labelId: 'gallerySoundLabel' },
+};
+ 
+function toggleSound(videoId, iconId, labelId) {
+  const video = document.getElementById(videoId);
+  const icon  = document.getElementById(iconId);
+  const label = document.getElementById(labelId);
+ 
+  const turningOn = video.muted; // about to unmute
+ 
+  // Mute all other videos first
+  if (turningOn) {
+    Object.keys(videoControls).forEach(otherId => {
+      if (otherId !== videoId) {
+        const other = document.getElementById(otherId);
+        if (other) other.muted = true;
+        const otherIcon  = document.getElementById(videoControls[otherId].iconId);
+        const otherLabel = document.getElementById(videoControls[otherId].labelId);
+        if (otherIcon)  otherIcon.textContent  = '🔇';
+        if (otherLabel) otherLabel.textContent = 'Tap for Sound';
+      }
+    });
+  }
+ 
+  // Toggle current video
+  video.muted = !video.muted;
+  if (video.muted) {
+    icon.textContent  = '🔇';
+    label.textContent = 'Tap for Sound';
+  } else {
+    icon.textContent  = '🔊';
+    label.textContent = 'Sound On';
+  }
+}
+ 
+// Generate falling petals
+const container = document.getElementById('particles');
+const colors = ['#f3c0c9','#c8526a','#f0e0c0','#c9a96e','#fde4ec','#ffe9d0'];
+for (let i = 0; i < 28; i++) {
+  const el = document.createElement('div');
+  el.className = 'petal';
+  const size = Math.random() * 10 + 6;
+  el.style.cssText = `
+    width:${size}px;
+    height:${size}px;
+    left:${Math.random()*100}%;
+    background:${colors[Math.floor(Math.random()*colors.length)]};
+    animation-duration:${Math.random()*12+8}s;
+    animation-delay:${Math.random()*10}s;
+    opacity:0;
+    border-radius:50% 0 50% 0;
+    transform:rotate(${Math.random()*360}deg);
+  `;
+  container.appendChild(el);
+}
+ 
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.12 });
+ 
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
